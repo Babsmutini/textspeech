@@ -13,7 +13,8 @@ const Home = () => {
     const fetchBlogs = async () => {
         setLoading("true");
         try {
-            const response = await fetch("/api/vi/scraped-articles/", {
+            const base = "http://127.0.0.01:8000";
+            const response = await fetch(`${base}/api/v1/scraped-articles/`, {
                 methods: "GET",
                 headers: { "Content-Type": "application/json" },
             });
@@ -130,7 +131,7 @@ const Home = () => {
                 <div className="w-[50%]"></div>
                 <div className=" flex justify-between w-[50%]">
                     <h1 className="text-xl uppercase font-semibold">Blog Posts</h1>
-                    <p className=" self-end">retrieved from ...</p>
+                    {/* <p className=" self-end">retrieved from ...</p> */}
                 </div>
             </div>
             <div className="grid h-full grid-cols-2 px-12 gap-x-8 ">
@@ -159,10 +160,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className=" h-screen overflow-auto">
-                     <BlogPost Blog={items} />
-                    {/* {blogs && !loading && <BlogPost Blog={blogs} />}
+                     {/* <BlogPost Blog={items} /> */}
+                    {blogs && !loading && <BlogPost Blog={blogs} />}
                     {!blogs && loading && "Blogs Loading ......"}
-                    {!blogs && !loading && "NO BLOG POST FOUND"} */}
+                    {!blogs && !loading && "NO BLOG POST FOUND"}
                 </div>
             </div>
         </div>

@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Header from "../components/Header";
 import BlogPost from "../components/BlogPost";
-import Song from "../components/audio.wav";
 
 const Home = () => {
     const [loading, setLoading] = useState(false);
     const [blogs, setBlogs] = useState("");
-    const [audio, setAudio] = useState(Song);
+    const [audio, setAudio] = useState("");
     const [audioText, setAudioText] = useState("");
     const [textSize, setTextSize] = useState("");
     const fetchBlogs = async () => {
@@ -125,9 +124,9 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="">
+        <div className="bg-black">
             <Header />
-            <div className="flex gap-x-8 px-20 py-4">
+            <div className="flex gap-x-8 px-20 py-4 text-white">
                 <div className="w-[50%]"></div>
                 <div className=" flex justify-between w-[50%]">
                     <h1 className="text-xl uppercase font-semibold">Blog Posts</h1>
@@ -160,10 +159,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className=" h-screen overflow-auto">
-                     {/* <BlogPost Blog={items} /> */}
-                    {blogs && !loading && <BlogPost Blog={blogs} />}
+                     <BlogPost Blog={items} />
+                    {/* {blogs && !loading && <BlogPost Blog={blogs} />}
                     {!blogs && loading && "Blogs Loading ......"}
-                    {!blogs && !loading && "NO BLOG POST FOUND"}
+                    {!blogs && !loading && "NO BLOG POST FOUND"} */}
                 </div>
             </div>
         </div>

@@ -11,9 +11,9 @@ const Blog = () => {
     const { title, content, audio } = location.state || {};
     return (
         <>
-            <div className="">
+            <div className="bg-black">
                 <Header />
-                <div className="flex flex-col gap-y-2 px-12 py-8 min-h-[600px]">
+                <div className="flex flex-col gap-y-2 px-12 py-8 min-h-screen text-white">
                     <button className="flex gap-2 items-center" onClick={() => navigate(-1)}>
                         <BiArrowBack />
                         Go Back

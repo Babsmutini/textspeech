@@ -2,10 +2,11 @@ import React from "react";
 import { useNavigate } from "react-router";
 import { formatDate } from "../utilities/helper";
 const Blog = ({ author, title, content, date, lastUpdated, id, audio }) => {
+    // bg-[#f0f3f4]
     const navigate = useNavigate();
     return (
         <div
-            className="cursor-pointer flex text-left flex-col gap-y-2 bg-[#f0f3f4] p-4 rounded-md"
+            className="cursor-pointer flex text-left flex-col gap-y-2  bg-[#131313] p-4 rounded-md text-white"
             onClick={() => navigate(`/blog/${id}`, { state: { title, content, audio } })}
         >
             <div className="flex justify-between">
